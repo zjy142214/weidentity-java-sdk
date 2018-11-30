@@ -1,6 +1,5 @@
 #!/bin/bash
-java_source_code_dir=`pwd`
-temp_file=`date +%s`".temp"
+java_source_code_dir=$(pwd)
 
 app_xml_config=${java_source_code_dir}/src/main/resources/applicationContext.xml
 app_xml_config_tpl=${java_source_code_dir}/src/main/resources/applicationContext.xml.tpl
@@ -32,7 +31,7 @@ function gradle_build_sdk()
     export WEID_ADDRESS="0x0"
     export CPT_ADDRESS="0x0"
     export ISSUER_ADDRESS="0x0"
-    MYVARS='${BLOCKCHIAN_NODE_INFO}:${WEID_ADDRESS}:${CPT_ADDRESS}:${ISSUER_ADDRESS}'
+    MYVARS="${BLOCKCHIAN_NODE_INFO}:${WEID_ADDRESS}:${CPT_ADDRESS}:${ISSUER_ADDRESS}"
     envsubst ${MYVARS} < ${app_xml_config_tpl} >${app_xml_config}
 
     echo "Begin to compile java code......"

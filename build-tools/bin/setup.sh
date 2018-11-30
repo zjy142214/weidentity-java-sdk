@@ -77,7 +77,7 @@ function modify_config()
     export WEID_ADDRESS=${weid_address}
     export CPT_ADDRESS=${cpt_address}
     export ISSUER_ADDRESS=${issuer_address}
-    MYVARS='${BLOCKCHIAN_NODE_INFO}:${WEID_ADDRESS}:${CPT_ADDRESS}:${ISSUER_ADDRESS}'
+    MYVARS="${BLOCKCHIAN_NODE_INFO}:${WEID_ADDRESS}:${CPT_ADDRESS}:${ISSUER_ADDRESS}"
     envsubst ${MYVARS} < ${app_xml_config_tpl} >${app_xml_config}
     cp ${app_xml_config} ${app_xml_config_dir}
     echo "modify sdk config finished..."
